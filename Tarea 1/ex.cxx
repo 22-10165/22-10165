@@ -85,6 +85,7 @@ double pearson_r(const vector<double>& VA, const vector<double>& VB) {
     // Impresión con printf como mencionaste
     printf("\n--- Resultados ---\n");
     printf("Coeficiente de correlacion Pearson (r): %.4f\n", r);
+    return r;
 }
 
 
