@@ -12,7 +12,7 @@ using std::string;
 
 
 
-double promedio(const vector<double>& VA) {
+double mean(const vector<double>& VA) {
     int n = VA.size();
     double sum_A = 0;
 
@@ -25,7 +25,7 @@ double promedio(const vector<double>& VA) {
     return prom;
 }
 
-void varianza(const vector<double>& VA) {
+void variance(const vector<double>& VA) {
     int n = VA.size();
     double prom=promedio(VA);
     double sumacuadrados = 0;
@@ -49,9 +49,9 @@ int main () {
         printf("Ingrese los %d valores de VA: ", n);
         for (int i = 0; i < n; i++) scanf("%lf", &VA[i]);
         printf("\n--- Resultados ---\n");
-        double l=promedio(VA);
+        double l=mean(VA);
         printf("promedio %.4f\n",l);
-        varianza(VA);
+        variance(VA);
         return 0;
     }
 
