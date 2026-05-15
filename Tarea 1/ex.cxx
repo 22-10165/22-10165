@@ -108,15 +108,258 @@ double pearson_r(const vector<double>& VA, const vector<double>& VB) {
 }
 
 
-vector<char> dec_to_septapus(int n){return {};}
-vector<char> dec_to_octopus(int n){return {};}
-vector<char> dec_to_hexakaidecapus(int n){return {};}
-vector<char> septapus_to_dec(vector<char> s){return {};}
-vector<char> octopus_to_dec(vector<char> s){return {};}
-vector<char> hexakaidecapus_to_dec(vector<char> s){return {};}
-vector<char> septapus_to_octopus(vector<char> s){return {};}
-vector<char> septapus_to_hexakaidecapus(vector<char> s){return {};}
-vector<char> octapus_to_septapus(vector<char> s){return {};}
-vector<char> octopus_to_hexakaidecapus(vector<char> s){return {};}
-vector<char> hexakaidecapus_to_septapus(vector<char> s){return {};}
-vector<char> hexakaidecapus_to_octopus(vector<char> s){return {};}
+#include <cassert>
+#include <cmath>
+#include <cstdio>
+#include <cstdlib>
+#include <ctime>
+#include <vector>
+#include <string>
+
+using std::vector;
+using std::string;
+vector<char> dec_to_septapus(int n){
+  vector<char> resultado;
+  vector<char> resultado_final;
+      if (n == 0) return {'0'};
+      while (n > 0) {
+          int residuo = n % 7;       
+          resultado.push_back(residuo + '0'); 
+          n = n / 7;
+      }
+  int cantidadelem = resultado.size();
+    for (int i = 0; i < cantidadelem; i++) {
+     //Para invertir el orden
+      resultado_final.push_back(resultado[cantidadelem - 1 - i]);
+
+  }
+  return resultado_final;
+} // la cual convierte un numero decimal a su representacion en el sistema de Septapus Mirabilis
+ 
+vector<char> dec_to_octopus(int n){
+  vector<char> resultado;
+  vector<char> resultado_final;
+      if (n == 0) return {'0'};
+      while (n > 0) {
+          int residuo = n % 8;       
+          resultado.push_back(residuo + '0'); 
+          n = n / 8;
+      }
+  int cantidadelem = resultado.size();
+    for (int i = 0; i < cantidadelem; i++) {
+     //Para invertir el orden
+      resultado_final.push_back(resultado[cantidadelem - 1 - i]);
+
+  }
+  return resultado_final;
+}// la cual convierte un numero decimal a su representacion en el sistema de Octopus Sapiens
+
+vector<char> dec_to_hexakaidecapus(int n){
+      vector<char> resultado;
+    vector<char> resultado_final;
+
+    
+      if (n == 0) return {'0'};
+  while (n > 0) {
+
+    
+      int residuo = n % 16;
+
+      if (residuo < 10) {
+          resultado.push_back(residuo + '0'); // Para 0-9
+      } 
+      else if (residuo == 10) {
+          resultado.push_back('A');
+      } 
+      else if (residuo == 11) {
+          resultado.push_back('B');
+      } 
+      else if (residuo == 12) {
+          resultado.push_back('C');
+      } 
+      else if (residuo == 13) {
+          resultado.push_back('D');
+      } 
+      else if (residuo == 14) {
+          resultado.push_back('E');
+      } 
+      else if (residuo == 15) {
+          resultado.push_back('F');
+      }
+
+      n = n / 16;
+
+
+    
+  }
+  int cantidadelem = resultado.size();
+    for (int i = 0; i < cantidadelem; i++) {
+     //Para invertir el orden
+      resultado_final.push_back(resultado[cantidadelem - 1 - i]);
+
+  }
+  return resultado_final;
+} // la cual convierte un numero decimal a su representacion en el sistema de Hexakaidecapus Turing
+vector<char> septapus_to_dec(vector<char> s){
+  vector<char> resultado_final;
+  vector<char> resultado;
+  int valdecimal=0;
+  double bm= 7;
+  int N= s.size();
+  for (int i = 0; i < N; i++) {
+    int var= pow(bm,N-1-i);
+     int l= (s[i] - '0') * var;
+    valdecimal+=l;
+      }
+
+  //Converitmos valdecimala  vector de char
+  if (valdecimal == 0) return {'0'};
+      
+      while (valdecimal > 0) {
+         
+          int digito = valdecimal % 10;
+          resultado.push_back(digito + '0'); 
+
+          valdecimal = valdecimal / 10;
+      }
+      for (int i = resultado.size() - 1; i >= 0; i--) {
+          resultado_final.push_back(resultado[i]);
+      }
+      return resultado_final;
+} // la cual convierte un numero representado en el sistema de Septapus Mirabilis a su representacion decimal
+vector<char> octopus_to_dec(vector<char> s){
+    vector<char> resultado_final;
+    vector<char> resultado;
+    int valdecimal=0;
+    double bm= 8;
+    int N= s.size();
+    for (int i = 0; i < N; i++) {
+      int var= pow(bm,N-1-i);
+       int l= (s[i] - '0') * var;
+      valdecimal+=l;
+        }
+
+    //Converitmos valdecimala  vector de char
+    if (valdecimal == 0) return {'0'};
+
+        while (valdecimal > 0) {
+
+            int digito = valdecimal % 10;
+            resultado.push_back(digito + '0'); 
+
+            valdecimal = valdecimal / 10;
+        }
+        for (int i = resultado.size() - 1; i >= 0; i--) {
+            resultado_final.push_back(resultado[i]);
+        }
+        return resultado_final;
+  }  
+
+
+
+// la cual convierte un numero representado en el sistema de Octopus Sapiens a su representacion decimal
+
+vector<char> hexakaidecapus_to_dec(vector<char> s) {
+    vector<char> resultado_final;
+    vector<char> resultado;
+    int valdecimal = 0;
+    double bm = 16; 
+    int N = s.size();
+
+    for (int i = 0; i < N; i++) {
+        int var = pow(bm, N - 1 - i);
+        int valor_real;
+
+        if (s[i] >= '0' && s[i] <= '9') {
+            valor_real = s[i] - '0';
+        } 
+        else if (s[i] == 'A' || s[i] == 'a') {
+            valor_real = 10;
+        } 
+        else if (s[i] == 'B' || s[i] == 'b') {
+            valor_real = 11;
+        } 
+        else if (s[i] == 'C' || s[i] == 'c') {
+            valor_real = 12;
+        } 
+        else if (s[i] == 'D' || s[i] == 'd') {
+            valor_real = 13;
+        } 
+        else if (s[i] == 'E' || s[i] == 'e') {
+            valor_real = 14;
+        } 
+        else if (s[i] == 'F' || s[i] == 'f') {
+            valor_real = 15;
+        }
+
+
+        valdecimal += valor_real * var;
+    }
+
+    if (valdecimal == 0) return {'0'};
+
+    while (valdecimal > 0) {
+        int digito = valdecimal % 10;
+        resultado.push_back(digito + '0'); 
+        valdecimal = valdecimal / 10;
+    }
+
+    for (int i = resultado.size() - 1; i >= 0; i--) {
+        resultado_final.push_back(resultado[i]);
+    }
+
+    return resultado_final;
+}
+ 
+  vector<char> septapus_to_octopus(vector<char> s) {
+      vector<char> dec_vector = septapus_to_dec(s);
+      int val_entero = 0;
+      for (int i = 0; i < dec_vector.size(); i++) {
+          val_entero = val_entero * 10 + (dec_vector[i] - '0');
+      }
+      return dec_to_octopus(val_entero);
+  }
+vector<char> septapus_to_hexakaidecapus(vector<char> s){
+        vector<char> dec_vector = septapus_to_dec(s);
+        int val_entero = 0;
+        for (int i = 0; i < dec_vector.size(); i++) {
+            val_entero = val_entero * 10 + (dec_vector[i] - '0');
+        }
+        return dec_to_hexakaidecapus(val_entero);
+    } 
+vector<char> octapus_to_septapus(vector<char> s){
+       vector<char> dec_vector = octopus_to_dec(s);
+          int val_entero = 0;
+          for (int i = 0; i < dec_vector.size(); i++) {
+              val_entero = val_entero * 10 + (dec_vector[i] - '0');
+          }
+          return dec_to_septapus(val_entero);
+      } // la cual convierte un numero representado en el sistema de Octopus Sapiens a su representacion en el sistema de Septapus Mirabilis
+vector<char> octopus_to_hexakaidecapus(vector<char> s){
+  vector<char> dec_vector = octopus_to_dec(s);
+      int val_entero = 0;
+      for (int i = 0; i < dec_vector.size(); i++) {
+          val_entero = val_entero * 10 + (dec_vector[i] - '0');
+      }
+      return dec_to_hexakaidecapus(val_entero);
+  } // la cual convierte un numero representado en el sistema de Octopus Sapiens a su
+vector<char> hexakaidecapus_to_septapus(vector<char> s){
+  vector<char> dec_vector = hexakaidecapus_to_dec(s);
+      int val_entero = 0;
+      for (int i = 0; i < dec_vector.size(); i++) {
+          val_entero = val_entero * 10 + (dec_vector[i] - '0');
+      }
+      return dec_to_septapus(val_entero);
+  } // la cual convierte un numero representado en el sistema de Hexakaidecapus Turing a su representacion en el sistema de Septapus Mirabilis
+vector<char> hexakaidecapus_to_octopus(vector<char> s){
+  vector<char> dec_vector = hexakaidecapus_to_dec(s);
+      int val_entero = 0;
+      for (int i = 0; i < dec_vector.size(); i++) {
+          val_entero = val_entero * 10 + (dec_vector[i] - '0');
+      }
+      return dec_to_octopus(val_entero);
+  }
+ // la cual convierte un numero representado en el sistema de Hexakaidecapus Turing a su representacion en el sistema de Octopus Sapiens
+
+
+
