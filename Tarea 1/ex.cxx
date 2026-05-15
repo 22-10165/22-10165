@@ -33,9 +33,6 @@
 using namespace std;
 using std::vector;
 using std::string;
-int main () {
-        return 0;
-    }
 
 
 double mean(const vector<double>& VA) {
@@ -59,6 +56,7 @@ double variance(const vector<double>& VA) {
     }
     double varianza= sumacuadrados/(n-1);
     printf("varianza %.4f\n",varianza);
+return varianza;
     }
 
 
@@ -342,6 +340,9 @@ vector<char> hexakaidecapus_to_octopus(vector<char> s){
       return dec_to_octopus(val_entero);
   }
  // la cual convierte un numero representado en el sistema de Hexakaidecapus Turing a su representacion en el sistema de Octopus Sapiens
+int main () {
+        return 0;
+    }
 
 
 
