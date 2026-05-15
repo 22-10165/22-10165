@@ -100,7 +100,10 @@ double pearson_r(const vector<double>& VA, const vector<double>& VB) {
 using std::vector;
 using std::string;
 vector<char> dec_to_septapus(int n){
-  vector<char> resultado;
+if (n == 0) return {'0'};
+bool esNegativo = (n < 0);
+if (esNegativo) n = -n;
+    vector<char> resultado;
   vector<char> resultado_final;
       if (n == 0) return {'0'};
       while (n > 0) {
@@ -108,6 +111,7 @@ vector<char> dec_to_septapus(int n){
           resultado.push_back(residuo + '0'); 
           n = n / 7;
       }
+    if (esNegativo) resultado.push_back('-'); 
   int cantidadelem = resultado.size();
     for (int i = 0; i < cantidadelem; i++) {
      //Para invertir el orden
@@ -118,6 +122,9 @@ vector<char> dec_to_septapus(int n){
 } // la cual convierte un numero decimal a su representacion en el sistema de Septapus Mirabilis
  
 vector<char> dec_to_octopus(int n){
+if (n == 0) return {'0'};
+bool esNegativo = (n < 0);
+if (esNegativo) n = -n;
   vector<char> resultado;
   vector<char> resultado_final;
       if (n == 0) return {'0'};
@@ -126,6 +133,7 @@ vector<char> dec_to_octopus(int n){
           resultado.push_back(residuo + '0'); 
           n = n / 8;
       }
+       if (esNegativo) resultado.push_back('-'); 
   int cantidadelem = resultado.size();
     for (int i = 0; i < cantidadelem; i++) {
      //Para invertir el orden
@@ -141,6 +149,9 @@ vector<char> dec_to_hexakaidecapus(int n){
 
     
       if (n == 0) return {'0'};
+    if (n == 0) return {'0'};
+bool esNegativo = (n < 0);
+if (esNegativo) n = -n;
   while (n > 0) {
 
     
@@ -173,6 +184,7 @@ vector<char> dec_to_hexakaidecapus(int n){
 
     
   }
+      if (esNegativo) resultado.push_back('-'); 
   int cantidadelem = resultado.size();
     for (int i = 0; i < cantidadelem; i++) {
      //Para invertir el orden
@@ -182,6 +194,7 @@ vector<char> dec_to_hexakaidecapus(int n){
   return resultado_final;
 } // la cual convierte un numero decimal a su representacion en el sistema de Hexakaidecapus Turing
 vector<char> septapus_to_dec(vector<char> s){
+    
   vector<char> resultado_final;
   vector<char> resultado;
   int valdecimal=0;
