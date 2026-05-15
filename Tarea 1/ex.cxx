@@ -370,51 +370,122 @@ if (esNegativo) {
   vector<char> septapus_to_octopus(vector<char> s) {
       vector<char> dec_vector = septapus_to_dec(s);
       int val_entero = 0;
-      for (int i = 0; i < dec_vector.size(); i++) {
+      bool esNegativo = (dec_vector[0] == '-');
+    int inicio;
+
+    if (esNegativo) {
+        inicio = 1; 
+    } else {
+        inicio = 0; 
+    }
+      for (int i = inicio; i < dec_vector.size(); i++) {
           val_entero = val_entero * 10 + (dec_vector[i] - '0');
       }
+if (esNegativo) {
+        val_entero = -val_entero;
+    }
       return dec_to_octopus(val_entero);
   }
 vector<char> septapus_to_hexakaidecapus(vector<char> s){
+    
         vector<char> dec_vector = septapus_to_dec(s);
         int val_entero = 0;
-        for (int i = 0; i < dec_vector.size(); i++) {
+     bool esNegativo = (dec_vector[0] == '-');
+    int inicio;
+
+    if (esNegativo) {
+        inicio = 1; 
+    } else {
+        inicio = 0; 
+    }
+        for (int i = inicio; i < dec_vector.size(); i++) {
             val_entero = val_entero * 10 + (dec_vector[i] - '0');
         }
+    if (esNegativo) {
+        val_entero = -val_entero;
+    }
         return dec_to_hexakaidecapus(val_entero);
     } 
 vector<char> octapus_to_septapus(vector<char> s){
        vector<char> dec_vector = octopus_to_dec(s);
+
           int val_entero = 0;
-          for (int i = 0; i < dec_vector.size(); i++) {
+        bool esNegativo = (dec_vector[0] == '-');
+    int inicio;
+
+    if (esNegativo) {
+        inicio = 1; 
+    } else {
+        inicio = 0; 
+    }
+          for (int i = inicio; i < dec_vector.size(); i++) {
               val_entero = val_entero * 10 + (dec_vector[i] - '0');
           }
+    if (esNegativo) {
+        val_entero = -val_entero;
+    }
+    
           return dec_to_septapus(val_entero);
       } // la cual convierte un numero representado en el sistema de Octopus Sapiens a su representacion en el sistema de Septapus Mirabilis
 vector<char> octopus_to_hexakaidecapus(vector<char> s){
   vector<char> dec_vector = octopus_to_dec(s);
-      int val_entero = 0;
-      for (int i = 0; i < dec_vector.size(); i++) {
+     int val_entero = 0;
+        bool esNegativo = (dec_vector[0] == '-');
+    int inicio;
+
+    if (esNegativo) {
+        inicio = 1; 
+    } else {
+        inicio = 0; 
+    }
+      for (int i = inicio; i < dec_vector.size(); i++) {
           val_entero = val_entero * 10 + (dec_vector[i] - '0');
       }
+    if (esNegativo) {
+        val_entero = -val_entero;
+    }
+    
       return dec_to_hexakaidecapus(val_entero);
   } // la cual convierte un numero representado en el sistema de Octopus Sapiens a su
 vector<char> hexakaidecapus_to_septapus(vector<char> s){
   vector<char> dec_vector = hexakaidecapus_to_dec(s);
       int val_entero = 0;
-      for (int i = 0; i < dec_vector.size(); i++) {
+    bool esNegativo = (dec_vector[0] == '-');
+    int inicio;
+
+    if (esNegativo) {
+        inicio = 1; 
+    } else {
+        inicio = 0; 
+    }
+      for (int i = inicio; i < dec_vector.size(); i++) {
           val_entero = val_entero * 10 + (dec_vector[i] - '0');
       }
+      if (esNegativo) {
+        val_entero = -val_entero;
+    }
       return dec_to_septapus(val_entero);
   } // la cual convierte un numero representado en el sistema de Hexakaidecapus Turing a su representacion en el sistema de Septapus Mirabilis
 vector<char> hexakaidecapus_to_octopus(vector<char> s){
   vector<char> dec_vector = hexakaidecapus_to_dec(s);
       int val_entero = 0;
-      for (int i = 0; i < dec_vector.size(); i++) {
+      bool esNegativo = (dec_vector[0] == '-');
+    int inicio;
+
+    if (esNegativo) {
+        inicio = 1; 
+    } else {
+        inicio = 0; 
+    }
+      for (int i = inicio; i < dec_vector.size(); i++) {
           val_entero = val_entero * 10 + (dec_vector[i] - '0');
       }
+        if (esNegativo) {
+        val_entero = -val_entero;
+    }
       return dec_to_octopus(val_entero);
   }
+
  // la cual convierte un numero representado en el sistema de Hexakaidecapus Turing a su representacion en el sistema de Octopus Sapiens
 int main () {
         return 0;
