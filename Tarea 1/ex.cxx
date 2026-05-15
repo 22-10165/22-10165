@@ -194,20 +194,37 @@ if (esNegativo) n = -n;
   return resultado_final;
 } // la cual convierte un numero decimal a su representacion en el sistema de Hexakaidecapus Turing
 vector<char> septapus_to_dec(vector<char> s){
+    bool esNegativo = (s[0] == '-');
+    int inicio;
+
+    if (esNegativo) {
+        inicio = 1;
+    } else {
+        inicio = 0; 
+    }
+
     
   vector<char> resultado_final;
   vector<char> resultado;
   int valdecimal=0;
   double bm= 7;
   int N= s.size();
-  for (int i = 0; i < N; i++) {
+  for (int i = inicio; i < N; i++) {
     int var= pow(bm,N-1-i);
      int l= (s[i] - '0') * var;
     valdecimal+=l;
       }
+if (esNegativo) {
+        valdecimal = -valdecimal;
+    }
 
-  //Converitmos valdecimala  vector de char
+  //Converitmos valdecimala  a vector de char como el while
   if (valdecimal == 0) return {'0'};
+    //Aqui hay un while que solo admite positivos  por ende para hacer la conversion a vector primero se vueve a convertir val decimal en positivo
+    bool resNegativo = (valdecimal < 0);
+    if (resNegativo) {
+        valdecimal = -valdecimal;
+    }
       
       while (valdecimal > 0) {
          
@@ -216,9 +233,14 @@ vector<char> septapus_to_dec(vector<char> s){
 
           valdecimal = valdecimal / 10;
       }
+    if (resNegativo) {
+              resultado.push_back('-');
+          }
       for (int i = resultado.size() - 1; i >= 0; i--) {
           resultado_final.push_back(resultado[i]);
       }
+
+    
       return resultado_final;
 } // la cual convierte un numero representado en el sistema de Septapus Mirabilis a su representacion decimal
 vector<char> octopus_to_dec(vector<char> s){
