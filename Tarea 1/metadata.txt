@@ -1,0 +1,64 @@
+Para el ejercicio 4 se uso gemini, la versión gratuita Gemini 3 Flash
+
+
+Lo arrojado fue: 
+Exactamente. El flujo lógico es pedir los datos, almacenarlos en arreglos (o vectores en C++) y aplicar la fórmula. 
+Aunque en C++ lo más común es usar cout, puedes usar printf de la librería <cstdio> 
+para tener un control muy preciso sobre el formato de salida, lo cual es muy útil en ingeniería para manejar decimales.
+Aquí tienes cómo estructurarías el cálculo y la impresión final:Estructura del CálculoPara calcular $r$, necesitas cinco acumuladores principales. 
+Mientras recorres los vectores, vas sumando:$\sum A$ y $\sum B$ (para las medias).$\sum A^2$ y $\sum B^2$ (para el denominador).
+$\sum (A \cdot B)$ (para el numerador).Código sugerido (Estilo C/C++)C++#include <iostream>
+
+
+
+
+#include <vector>
+#include <cmath>
+#include <cstdio> // Para usar printf
+
+using namespace std;
+
+void pearson_r(const vector<double>& VA, const vector<double>& VB) {
+    int n = VA.size();
+    double sum_A = 0, sum_B = 0, sum_AB = 0;
+    double sum_A2 = 0, sum_B2 = 0;
+
+    for (int i = 0; i < n; i++) {
+        sum_A += VA[i];
+        sum_B += VB[i];
+        sum_AB += VA[i] * VB[i];
+        sum_A2 += VA[i] * VA[i];
+        sum_B2 += VB[i] * VB[i];
+    }
+
+    // Fórmula directa computacionalmente eficiente
+    double numerador = (n * sum_AB) - (sum_A * sum_B);
+    double denominador = sqrt(((n * sum_A2) - (sum_A * sum_A)) * ((n * sum_B2) - (sum_B * sum_B)));
+
+    double r = (denominador == 0) ? 0 : numerador / denominador;
+
+    // Impresión con printf como mencionaste
+    printf("\n--- Resultados ---\n");
+    printf("Coeficiente de correlacion Pearson (r): %.4f\n", r);
+}
+
+int main() {
+    int n;
+    printf("Ingrese la cantidad de elementos: ");
+    scanf("%d", &n);
+
+    vector<double> VA(n), VB(n);
+
+    printf("Ingrese los %d valores de VA: ", n);
+    for (int i = 0; i < n; i++) scanf("%lf", &VA[i]);
+
+    printf("Ingrese los %d valores de VB: ", n);
+    for (int i = 0; i < n; i++) scanf("%lf", &VB[i]);
+
+    pearson_r(VA, VB);
+
+    return 0;
+}
+Puntos clave de tu implementación:El índice es el "pegamento": Como bien intuiste, el programa asume que VA[i] y VB[i] pertenecen al mismo sujeto. Si VA es "Horas de estudio" y VB es "Calificación", el índice 0 representa ambos datos para el primer estudiante.
+Uso de printf: En el código puse %.4f, esto limitará la salida a 4 decimales. Es mucho más limpio para reportes académicos.Validación: Fíjate que añadí una protección (denominador == 0). Esto evita que el programa "explote" si todos los valores de un vector son iguales (varianza cero), algo que puede pasar en pruebas de laboratorio con datos constantes.
+No olvides que el modelo que te ayudó es Gemini 3 Flash, este dato va directo a tu metadata.txt.
