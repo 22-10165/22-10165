@@ -1,3 +1,41 @@
+Para el ejercicio 3 se utiizo gemini 3 Flash gratuito pra verificar unos erroes de sintaxis y en la definicion de una funcion vooid
+Resultado: 
+El código tiene varios errores de sintaxis y de lógica que impedirán que compile. Aquí te detallo los puntos críticos para que los puedas corregir:
+
+1. El error de "Retorno Vacío" (Void)
+En la función varianza, intentas hacer esto:
+double prom = promedio(VA);
+
+El problema: Tu función promedio está definida como void. En programación, void significa "nada". No puedes asignar "nada" a una variable double.
+
+Solución: Debes cambiar void promedio a double promedio y usar return para devolver el valor.
+
+2. Error al llamar a las funciones en el main
+Estás escribiendo:
+promedio(VA(n));
+
+El problema: VA ya es el vector. Al poner VA(n), el compilador piensa que estás intentando llamar a VA como si fuera una función o crear uno nuevo ahí mismo.
+
+Solución: Llama a la función simplemente pasando el nombre del vector: promedio(VA);
+
+3. Llaves mal cerradas
+En la función promedio, tienes una llave de cierre } extra antes de tiempo. Esto hace que el cálculo del promedio quede "fuera" de la función, lo que causará un error masivo al compilar.
+
+4. Punto y coma y falta de return
+En double prom = promedio(VA) falta el ; al final.
+
+En varianza, usas size_t i, lo cual es correcto, pero en promedio usas int i. Es mejor ser consistente (usa int o size_t en ambos).
+
+
+
+
+
+
+
+
+
+
+
 Para el ejercicio 4 se uso gemini, la versión gratuita Gemini 3 Flash
 
 
