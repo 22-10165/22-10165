@@ -1,3 +1,34 @@
+sys.reset();
+Z P:= 1
+Z Q:= 1
+Z => Z negacion:= fn(Z x) -> if(lt(x)(0),0,1);
+Z nQ:= negacion(Q);
+Z nP:= negacion(P);
+nQ
+nP
+Z => Z => Z and:= fn(Z x) -> fn(Z y) -> if(lt(2)(sub(-x)(y)),0,1);
+Z PyQ := and(P)(Q);
+PyQ
+Z => Z => Z or:= fn(Z x) -> fn(Z y) -> if(lt(1)(sub(-x)(y)),0,1);
+Z PoQ := or(Q)(P);
+PoQ
+
+
+Z => Z => Z de_morgan1:= fn(Z x) -> fn(Z y) -> if(lt(or(negacion(x))(negacion(y)))(negacion(and(x)(y))),0,1);
+
+de_morgan1(P)(Q)
+
+Z => Z => Z de_morgan2:= fn(Z x) -> fn(Z y) -> if(lt(negacion(or(P)(Q)))(and(negacion(x))(negacion(y))),0,1);
+de_morgan2(P)(Q)
+
+Z => Z succ:= fn(Z x) -> sub(-1)(x);
+Z z:= 45;
+Z g:= succ(z);
+g
+
+
+
+//Comentario:Esto causa un error ya que estas funciones ya esatan definidas
 Z => Z => Z de_morgan1 := 5;
 Z => Z => Z de_morgan2 := 5;
 Z => Z succ := 5;
