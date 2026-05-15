@@ -307,9 +307,7 @@ vector<char> hexakaidecapus_to_dec(vector<char> s) {
     }
     vector<char> resultado_final;
     vector<char> resultado;
-    if (esNegativo) {
-        valdecimal = -valdecimal;
-    }
+    
     int valdecimal = 0;
     double bm = 16; 
     int N = s.size();
@@ -343,7 +341,9 @@ vector<char> hexakaidecapus_to_dec(vector<char> s) {
 
         valdecimal += valor_real * var;
     }
-
+if (esNegativo) {
+        valdecimal = -valdecimal;
+    }
 
   if (valdecimal == 0) return {'0'};
     //Aqui hay un while que solo admite positivos  por ende para hacer la conversion a vector primero se vueve a convertir val decimal en positivo
