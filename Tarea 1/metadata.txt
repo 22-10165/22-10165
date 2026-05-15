@@ -1,9 +1,8 @@
 Para el ejercicio 3 se utiizo gemini 3 Flash gratuito pra verificar unos erroes de sintaxis y en la definicion de una funcion void
 
 
-
-
-
-
 Para el ejercicio 4 se uso gemini, la versión gratuita Gemini 3 Flash
+
+Para el ejercicio 5 se uso la versión gratuita Gemini 3 Flash, se utilizo para ver la sintaxis  de ciertas funciones y  para pedir algunso elementos en ciertos flujos(como no se pide explicitamnte los prompts y fueron varios inluidos los resultados se decide no ponerlos pero en caso de pedirlos estan guardados), ademas se utilizo para entender mas las conversionas a otros sistemas
+
 
