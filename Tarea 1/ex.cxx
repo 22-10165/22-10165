@@ -1,3 +1,72 @@
+///Tarea 1 Ejercicio 3
+#include <cassert>
+#include <cmath>
+#include <cstdio>
+#include <cstdlib>
+#include <ctime>
+#include <vector>
+#include <string>
+
+using std::vector;
+using std::string;
+
+
+
+double promedio(const vector<double>& VA) {
+    int n = VA.size();
+    double sum_A = 0;
+
+    for (int i = 0; i < n; i++) {
+        sum_A += VA[i];
+        
+    }
+    //Aqui se podria hacer un if else para el caso denominador iual a cero, sin embargo (n == 0) ? 0 cumple esta funcion
+    double prom = (n == 0) ? 0 : (sum_A)/n;
+    return prom;
+}
+
+void varianza(const vector<double>& VA) {
+    int n = VA.size();
+    double prom=promedio(VA);
+    double sumacuadrados = 0;
+    for (int i = 0; i < n; ++i) {
+        sumacuadrados= sumacuadrados + ((VA[i]-prom)*(VA[i]-prom));
+    }
+    double varianza= sumacuadrados/(n-1);
+    printf("varianza %.4f\n",varianza);
+    }
+
+
+//Utilizado como ejemplo el ejercico 4 para recibir y almacenar datos en vectores se establece
+int main () {
+
+     int n;
+        printf("Ingrese la cantidad de elementos: ");
+        scanf("%d", &n);
+
+        vector<double> VA(n);
+
+        printf("Ingrese los %d valores de VA: ", n);
+        for (int i = 0; i < n; i++) scanf("%lf", &VA[i]);
+        printf("\n--- Resultados ---\n");
+        double l=promedio(VA);
+        printf("promedio %.4f\n",l);
+        varianza(VA);
+        return 0;
+    }
+
+//Nota aparte se uso gemini para corregir algunos errores de sintaxis y averiguar como definir disitnto la funcion void a double, ya que con void no se puede retornar vables
+    
+
+
+
+
+
+
+
+
+
+
 //Tarea ejercicio4
 //Esta pregunta es "AI encouraged". Les pedimos que usen inteligencia artificial.
 //Recuerden que DEBEN mostrar los datos requeridos en un archivoo llamado "metadata.txt", y no dentro del código.
