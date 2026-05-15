@@ -34,24 +34,6 @@ using namespace std;
 using std::vector;
 using std::string;
 int main () {
-
-     int n;
-        printf("Ingrese la cantidad de elementos: ");
-        scanf("%d", &n);
-
-          vector<double> VA(n), VB(n);
-        printf("Ingrese los %d valores de VA: ", n);
-        for (int i = 0; i < n; i++) scanf("%lf", &VA[i]);
-    
-        printf("\n--- Resultados ---\n");
-        double l=mean(VA);
-        printf("promedio %.4f\n",l);
-        variance(VA);
-      printf("Ingrese los %d valores de VB: ", n);
-    for (int i = 0; i < n; i++) scanf("%lf", &VB[i]);
-
-    pearson_r(VA, VB);
-
         return 0;
     }
 
