@@ -1,1 +1,9 @@
 
+Decidi irme por este algoritmo pra no elegir puntos muy cercanos entre si, en mi razonamiento mejora el procesamiento de datos
+https://www.geeksforgeeks.org/machine-learning/ml-k-means-algorithm/
+
+Use las fuentes dadas en Nagysoft Parte 1
+https://en.wikipedia.org/wiki/K-means_clustering#Relation_to_other_algorithms
+https://web.stanford.edu/~cpiech/cs221/handouts/kmeans.html
+
+En otro texto adjunto estala conversacion con GEmini Flash y tambein en la misma conversacion la use en modo thinking pero es bastante contenido igual no tengo problema con compartir la conversacion por la misma opcionde gemini
