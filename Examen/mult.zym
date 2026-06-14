@@ -1,0 +1,24 @@
+::zilly+
+sys.reset();
+Z => Z abs := fn(Z n) -> if(n >= 0, n,-n );
+
+Z => Z => Z multprim:= fn(Z n) -> fn(Z k) -> if(abs(k)<=0 ,0, n + multprim(n)(abs(k)-1));
+Z => Z => Z mult:= fn(Z n) -> fn(Z k) -> if(k<=0 ,-multprim(n)(k),multprim(n)(k));
+
+Pruebas
++ y +
+mult(4)(6)
+- y -
+mult(-4)(-6)
++ y - 
+mult(3)(-6)
+- y + 
+mult(-5)(1)
+casos cero
+mult(0)(0)
+mult(0)(1000)
+mult(1000)(0)
+
+Aqui se uso una analogia con c++ si se fuera hacer una serie de sumas seria un lazo con un contador i y se iria modificando dicho 
+i despues de cda ciclo para que se cumpla una condicion y el ciclo de sumas se rompa. Se aprovecha la propiedad conmutativa de la multiplicacion
+de manera que se asinga nada mas un contador k y no se debem hacer condicones if extra para casos k* n ya que es lo mismo que n * k
