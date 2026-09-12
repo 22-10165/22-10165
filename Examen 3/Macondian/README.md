@@ -6,8 +6,8 @@ El profesor, a discreción suya, puede interrogarlos sobre el proyecto ***Macond
 Le pedi a la IA que hiciera el codigo y le pedi la siguiente manera de procesar los datos basado en:
 https://es.wikipedia.org/wiki/Regla_68-95-99.7
 Donde si asumo: 
-Que el sensor junto con sus microsensores dan una lectuura semejante a una distribucion normal entonces acorde a la tabña en el lina agarra un 95% porciento 
-de las lecturas para la medida final y el otro 5 porciento lo considera como un outlier 
+Que el sensor junto con sus microsensores dan una lectuura semejante a una distribucion normal entonces acorde a la tabla agarra el 95% porciento 
+de las lecturas posibles cercanas al promedio para la medida final y el otro 5 porciento lo considera como un outlier 
 
 
 Basandome en: 
