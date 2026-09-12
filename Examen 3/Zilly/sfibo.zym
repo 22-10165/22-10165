@@ -1,0 +1,13 @@
+::zilly+
+Z => Z fibo := fn(Z n) => Z -> if(n < 2, n, fibo(n - 1) + fibo(n - 2));
+Z => Z sum1stN := fn(Z n) -> if(n < 0, 0, n + sum1stN(n - 1));
+Z => Z sfibo := fn(Z n) => Z -> if(n<2,n,fibo(n)+sfibo(n-1));
+
+fibo(9)
+sfibo(9)
+
+fibo(5)
+sfibo(5)
+
+fibo(10)
+sfibo(10)
