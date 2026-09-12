@@ -6,7 +6,8 @@ El profesor, a discreción suya, puede interrogarlos sobre el proyecto ***Macond
 Le pedi a la IA que hiciera el codigo y le pedi la siguiente manera de procesar los datos basado en:
 https://es.wikipedia.org/wiki/Regla_68-95-99.7
 Donde si asumo: 
-Que el sensor junto con sus microsensores dan una lectuura semejante a una distribucion normal entonces acorde a la tabña en el lina agarra un 95% porcieno de las lecturas para la medida final y el otro 5 porciento lo considera como un outlier 
+Que el sensor junto con sus microsensores dan una lectuura semejante a una distribucion normal entonces acorde a la tabña en el lina agarra un 95% porciento 
+de las lecturas para la medida final y el otro 5 porciento lo considera como un outlier 
 
 
 Basandome en: 
@@ -43,8 +44,9 @@ El algoritmo:
 2. Conseguir el promedio y la desviacion estandar en base al promedio individual Obtenido para cada lote
 3. Mi criterio es el siguiente para eliminar outliers: Si con el promedio individual supera o es inferior a el promedio iniidual +/- dos veces la desviacion estandar entonces se elimina ese promedio individual del conjunto de datos
 4. Se hace un promedio Global con los promedios individuales restantes 
-5. Se presenta al final
-Todo esto se hace en tiempo real
+5. Se presenta al final.
+Todo esto se hace en tiempo real.
+En esencia:
 Se usa la deviacion estandar para suavizar el promedio porque entendiendoq ue las desviacion estandar es un calculo para medir la dispersion de los datos si hay algun lote que dio unos datos muy alejados(en este caso se considera muy alejado promedioglobal+- 2 veces la desviacion estandar) entonces se elimina y de esta manera se obtienen unos datos mas unidos.
 
 
