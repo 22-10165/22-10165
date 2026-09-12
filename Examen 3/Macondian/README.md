@@ -3,7 +3,11 @@ Deben ser capaces de explicarlo de forma clara, precisa, y sucinta, **sin usar I
 La explicación del algoritmo debe incluirse en el archivo "Report.md" o "Report.txt".
 El profesor, a discreción suya, puede interrogarlos sobre el proyecto ***Macondian***.
 
-Le pedi a la IA que hiciera el codigo para la siguiente manera de procesar los datos:
+Le pedi a la IA que hiciera el codigo y le pedi la siguiente manera de procesar los datos basado en:
+https://es.wikipedia.org/wiki/Regla_68-95-99.7
+Donde si asumo: 
+Que el sensor junto con sus microsensores dan una lectuura semejante a una distribucion normal entonces acorde a la tabña en el lina agarra un 95% porcieno de las lecturas para la medida final y el otro 5 porciento lo considera como un outlier 
+
 
 Basandome en: 
 
