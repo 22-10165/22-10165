@@ -40,9 +40,8 @@ El algoritmo:
 3. Mi criterio es el siguiente para eliminar outliers: Si con el promedio individual supera o es inferior a el promedio iniidual +/- dos veces la desviacion estandar entonces se elimina ese promedio individual del conjunto de datos
 4. Se hace un promedio Global con los promedios individuales restantes 
 5. Se presenta al final
-
 Todo esto se hace en tiempo real
-
+Se usa la deviacion estandar para suavizar el promedio porque entendiendoq ue las desviacion estandar es un calculo para medir la dispersion de los datos si hay algun lote que dio unos datos muy alejados(en este caso se considera muy alejado promedioglobal+- 2 veces la desviacion estandar) entonces se elimina y de esta manera se obtienen unos datos mas unidos.
 
 
 
