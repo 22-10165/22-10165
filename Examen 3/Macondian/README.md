@@ -37,7 +37,7 @@ Tengo que crear un algoritmo de suavizacion par ala medida de los macondos final
 El algoritmo:
 1. Sacar un promedio individual para cada Macrosensor para cada Lote.
 2. Conseguir el promedio y la desviacion estandar en base al promedio individual Obtenido para cada lote
-3. Mi criterio es el siguiente para eliminar outliers: Si con el promedio individual supera/retrasa el promedio iniidual mas/menos dos veces la desviacion estandar entonces se elimina  ese promedio individual
+3. Mi criterio es el siguiente para eliminar outliers: Si con el promedio individual supera o es inferior a el promedio iniidual +/- dos veces la desviacion estandar entonces se elimina ese promedio individual del conjunto de datos
 4. Se hace un promedio Global con los promedios individuales restantes 
 5. Se presenta al final
 
